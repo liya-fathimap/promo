@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo.in | Web Social SEO</title>
+    <style>
+ /* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+    background-color: white;
+    color: #000;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ====== Header and Navigation ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3.125rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: -8.75rem;
+    width: 100%;
+    max-width: 91.875rem;
+    border-radius: 0.625rem;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #1d8b15; /* Dark Green */
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-text sub {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #0A8F00;
+    margin-left: 0.125rem;
+}
+
+.logo-subtext {
+    font-size: 0.625rem;
+    color: #333;
+    position: absolute;
+    top: 100%;
+    margin-top: -0.375rem;
+    left: 0;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.logo-text-footer {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-text-footer sub {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;  
+    margin-left: 0.125rem;
+}
+
+.logo-subtext-footer {
+    font-size: 0.625rem;
+    color: white;
+    position: absolute;
+    top: 100%;
+    margin-top: -0.375rem;
+    left: 0;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 0.9375rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0A8F00;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #0A8F00;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.contact-button {
+    border: 2px solid #000;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.3125rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0A8F00;
+    border-color: #0A8F00;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ====== Green Hero Section ====== */
+.green-background {
+    background-color: #006837;
+    min-height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Hero Heading */
+.green-background h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.hero h1 {
+    margin-top: 3.125rem;
+}
+
+/* ====== Contact Section ====== */
+.contact-section {
+    padding: 3.125rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 75rem;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+}
+
+.contact-nav {
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.625rem;
+    transform: translateY(1.25rem);
+    animation: fadeInUp 0.8s 0.4s forwards;
+}
+
+.contact-nav hr {
+    flex: 0 0 2.5rem;
+    height: 2px;
+    background-color: #006837 !important;
+    border: none;
+    margin: 0;
+}
+
+.contact-nav h3 {
+    white-space: nowrap;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-heading {
+    margin-bottom: 2.5rem;
+    transform: translateY(1.25rem);
+    animation: fadeInUp 0.8s 0.6s forwards;
+}
+
+.contact-heading h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-content {
+    display: flex;
+    width: 100%;
+    gap: 1.875rem;
+    margin-top: 1.25rem;
+}
+
+.contact-form {
+    flex: 1;
+    transform: translateY(1.25rem);
+    animation: fadeInUp 0.8s 0.8s forwards;
+}
+
+.form-group {
+    margin-bottom: 0.2rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.3125rem;
+    border: 2px solid transparent;
+    background-color: #5f5f5f25;
+    font-size: 0.875rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: green;
+}
+
+textarea.form-control {
+    height: 9.375rem;
+    resize: none;
+}
+
+.contact-info {
+    max-width: 25rem;
+    width: 100%;
+    background-color: #006837;
+    border-radius: 0.3125rem;
+    padding: 1.875rem;
+    color: white;
+    transform: translateY(1.25rem);
+    animation: fadeInUp 0.8s 1s forwards;
+}
+
+.address-section h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+
+.address-section p {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.contact-info-section {
+    margin-bottom: 1.25rem;
+}
+
+.contact-info-section h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+
+.contact-info-section p {
+    font-size: 0.875rem;
+    margin-bottom: 0.3125rem;
+}
+
+.open-time {
+    margin-bottom: 1.25rem;
+}
+
+.open-time h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+
+.open-time p {
+    font-size: 0.875rem;
+}
+
+.social-section h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.625rem;
+}
+
+.social-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #006837;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.send-btn {
+    background-color: transparent;
+    border: 1px solid #006837;
+    color: #006837;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #006837;
+    color: white;
+}
+
+/* ====== Footer ====== */
+footer {
+    background-color: #006837;
+    color: white;
+    padding: 2.5rem;
+    margin-top: 18.75rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75rem;
+    margin: 0 auto;
+    gap: 3.75rem;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    max-width: 18.75rem;
+}
+
+.footer-left p {
+    font-size: 0.75rem;
+    margin-top: 0.9375rem;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.625rem;
+    margin-top: 0.9375rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 5rem;
+    flex: 1;
+    font-weight: normal;
+}
+
+.nav-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.9375rem;
+}
+
+.nav-section ul {
+    list-style: none;
+}
+
+.nav-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: opacity 0.3s;
+}
+
+.nav-section ul li a:hover {
+    opacity: 0.8;
+}
+
+.nav-section contact {
+    font-weight: normal;
+}
+
+.footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem 2.5rem;
+    background-color: #006837;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+}
+
+.footer-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bar .left, .footer-bar .right {
+    flex: unset;
+    text-align: inherit;
+}
+
+.footer-bar .left {
+    margin-left: 5rem;
+    color: white;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.3125rem;
+    font-weight: 500;
+    height: 1.25rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: all 0.8s;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== Mobile Navigation ====== */
+.mobile-nav {
+   
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    max-width: 25rem;
+    height: 100vh;
+    background-color: #006837;
+    color: white;
+    z-index: 1001;
+    padding: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-close {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin-top: 3rem;
+}
+
+.mobile-nav li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.mobile-nav {
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+}
+/* ====== Media Queries ====== */
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    html {
+        font-size: 15px;
+    }
+    
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    .footer-content {
+        gap: 2.5rem;
+    }
+    
+    .footer-nav {
+        gap: 3rem;
+    }
+    
+    .footer-bar .left {
+        margin-left: 2rem;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    html {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 1rem 1.5rem;
+    }
+    
+    nav li {
+        margin: 0 0.5rem;
+    }
+    
+    .contact-section {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .footer-content {
+        gap: 2rem;
+    }
+    
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 2.5rem;
+    }
+    
+    .nav-section {
+        flex: 0 0 45%;
+    }
+    
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    html {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 0.75rem 1rem;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        max-width: 100%;
+    }
+    
+    .green-background h1 {
+        font-size: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-left {
+        max-width: 100%;
+    }
+    
+    .footer-nav {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+    
+    .footer-bar .left {
+        margin-left: 0;
+    }
+    
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.5rem;
+    }
+    
+    .green-background {
+        min-height: 20rem;
+    }
+    
+    .green-background h1 {
+        font-size: 1.75rem;
+    }
+    
+    .contact-heading h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+    
+    footer {
+        padding: 2rem 1rem;
+    }
+}
+
+/* For really small devices */
+@media (max-width: 359.98px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .contact-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+   
+}
+@media (max-width: 600px) {
+    .logo-subtext {
+        font-size: 7px;  /* Adjust to a larger size for mobile */
+        font-weight: 700;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="mobile-nav">
+        <button class="mobile-nav-close">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About us</a></li> 
+            <li><a href="index.html#services">Service</a></li>
+            <li><a href="index.html#work">Previous work</a></li>
+        </ul>
+    </div>
+    
+    <!-- Add overlay here -->
+    <div class="overlay"></div>
+    <!-- Header -->
+    <div class="green-background">
+        <!-- White header inside green background -->
+        <header>
+            <div class="logo">
+                <span class="logo-text">PROMO<sub>Grp</sub></span>
+                <span class="logo-subtext">YOUR DIGITAL SUPPORTER</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About us</a></li> 
+                    <li><a href="index.html#services">Service</a></li>
+                    <li><a href="index.html#work">Previous work</a></li>
+                </ul>
+            </nav>
+            <button class="contact-button">Contact us</button>
+            <button class="mobile-menu-btn">☰</button>
+        </header>
+
+        <!-- Hero Section - Below the white header -->
+        <section class="hero">
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">Home / <span style="color: rgba(240, 248, 255, 0.434);">Contact Us</span></div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-nav scroll-reveal">
+            <hr style="background-color: #006837;"> <h3>Contact Us</h3>
+        </div>
+        <div class="contact-heading scroll-reveal" id="contact">
+            <h2>Join Us in Creating<br>Something Amazing.</h2>
+        </div>
+        <div class="contact-content">
+           <!-- Contact Form -->
+           <div class="contact-form scroll-reveal">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name*" required>
+                    <div id="nameError" class="error-message"></div>
+                </div>
+                <div class="form-group" style="display: flex; gap: 8px;">
+                    <div style="width: 50%;">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email*" required>
+                        <div id="emailError" class="error-message"></div>
+                    </div>
+                    <div style="width: 50%;">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number*" required>
+                        <div id="phoneError" class="error-message"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject*" required>
+                    <div id="subjectError" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message-text" class="form-control" placeholder="Message*" required></textarea>
+                    <div id="messageError" class="error-message"></div>
+                </div>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    
+    
+            
+            <!-- Contact Info -->
+            <div class="contact-info scroll-reveal">
+                <div class="address-section">
+                    <h3>Address</h3>
+                    <p>2nd Floor<br>Friends Ln, Chembukkavu, Vathakara<br>Kalathodu, Kerala 682005<br>India</p>
+                </div>
+                <div class="contact-info-section">
+                    <h3>Contact</h3>
+                    <p>Phone : +91 8606 667 636</p>
+                    <p>Email : promoguru5m@gmail.com</p>
+                </div>
+                <div class="open-time">
+                    <h3>Open Time</h3>
+                    <p>Monday - Friday : 09:00 - 08:00</p>
+                </div>
+                <div class="social-section">
+                    <h3>Stay Connected</h3>
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M13.601 2.399A7.948 7.948 0 0 0 8 0C3.582 0 0 3.582 0 8c0 1.411.369 2.785 1.066 3.992L0 16l4.129-1.036A7.94 7.94 0 0 0 8 16c4.418 0 8-3.582 8-8a7.948 7.948 0 0 0-2.399-5.601zM8 14.438a6.42 6.42 0 0 1-3.313-.889l-.237-.141-2.449.614.653-2.386-.153-.244A6.432 6.432 0 0 1 1.563 8c0-3.549 2.888-6.437 6.437-6.437a6.43 6.43 0 0 1 4.556 1.882 6.43 6.43 0 0 1 1.882 4.556c0 3.549-2.888 6.437-6.437 6.437z"/>
+                                <path d="M11.114 9.307c-.156-.079-.924-.457-1.068-.51-.143-.054-.248-.079-.353.079-.105.157-.404.51-.496.617-.091.105-.181.118-.338.04-.157-.079-.663-.243-1.263-.773-.466-.415-.78-.93-.872-1.086-.092-.157-.009-.242.07-.32.072-.072.157-.182.235-.273.079-.092.105-.157.157-.262.052-.104.026-.197-.014-.273-.04-.079-.353-.847-.484-1.16-.127-.303-.256-.262-.353-.266-.092-.004-.196-.007-.3-.007s-.273.04-.416.197c-.143.157-.545.533-.545 1.3s.558 1.511.636 1.617c.079.105 1.098 1.678 2.664 2.284.373.16.665.255.892.327.375.118.717.101.986.061.3-.045.924-.378 1.054-.742.13-.364.13-.677.091-.743-.04-.066-.143-.105-.3-.183z"/>
+                            </svg>
+                    </div>
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                        </svg>
+                    </div>
+                        <div class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </div>
+                        
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">
+                    <div>
+                        <span class="logo-text-footer">PROMO<sub>Grp</sub></span>
+                        <span class="logo-subtext-footer">YOUR DIGITAL SUPPORTER</span>
+                    </div>
+                </div>
+                <p>We are a vibrant video production firm committed to assisting people in expanding their social media presence by producing cutting-edge videos.</p>
+                <div class="footer-social">
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.601 2.399A7.948 7.948 0 0 0 8 0C3.582 0 0 3.582 0 8c0 1.411.369 2.785 1.066 3.992L0 16l4.129-1.036A7.94 7.94 0 0 0 8 16c4.418 0 8-3.582 8-8a7.948 7.948 0 0 0-2.399-5.601zM8 14.438a6.42 6.42 0 0 1-3.313-.889l-.237-.141-2.449.614.653-2.386-.153-.244A6.432 6.432 0 0 1 1.563 8c0-3.549 2.888-6.437 6.437-6.437a6.43 6.43 0 0 1 4.556 1.882 6.43 6.43 0 0 1 1.882 4.556c0 3.549-2.888 6.437-6.437 6.437z"/>
+                            <path d="M11.114 9.307c-.156-.079-.924-.457-1.068-.51-.143-.054-.248-.079-.353.079-.105.157-.404.51-.496.617-.091.105-.181.118-.338.04-.157-.079-.663-.243-1.263-.773-.466-.415-.78-.93-.872-1.086-.092-.157-.009-.242.07-.32.072-.072.157-.182.235-.273.079-.092.105-.157.157-.262.052-.104.026-.197-.014-.273-.04-.079-.353-.847-.484-1.16-.127-.303-.256-.262-.353-.266-.092-.004-.196-.007-.3-.007s-.273.04-.416.197c-.143.157-.545.533-.545 1.3s.558 1.511.636 1.617c.079.105 1.098 1.678 2.664 2.284.373.16.665.255.892.327.375.118.717.101.986.061.3-.045.924-.378 1.054-.742.13-.364.13-.677.091-.743-.04-.066-.143-.105-.3-.183z"/>
+                        </svg>
+                </div>
+                <div class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                    </svg>
+                </div>
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                        </svg>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="nav-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">About us</a></li>
+                        <li><a href="index.html#services">Service</a></li>
+                        <li><a href="index.html#work">Previous work</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">+91 8606 667 636</a></li>
+                        <li><a href="#">promogrp.tm@gmail.com</a></li>
+                        <li><a href="#">285F+HCJ</a></li>
+                        <li><a href="#">Friends Ln,Chembumukku,Vazhakkala</a></li>
+                        <li><a href="#">Kakkanad, Kerala 682030</a></li>
+                        <li><a href="#">Inda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="left">Copyright © 2024 Promo Group. All Rights Reserved</div>
+            <div class="right"><a href="#">User Terms & Condition</a> | <a href="#">Privacy Policy</a></div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
