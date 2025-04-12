@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMO - Your Digital Supporter</title>
+    <style>
+ /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for responsive scaling */
+}
+
+body {
+    background-color: white;
+    color: #000;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3.125rem; /* Convert px to rem */
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #1d8b15; /* Dark Green */
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-text sub {
+    font-size: 0.8rem; /* Smaller Grp */
+    font-weight: normal; /* Not bold */
+    color: #0A8F00;
+    margin-left: 2px;
+}
+
+.logo-subtext {
+    font-size: 0.625rem; /* Convert px to rem */
+    color: #333;
+    position: absolute;
+    top: 100%;
+    margin-top: -0.375rem;
+    left: 0;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 0.9375rem; /* Convert px to rem */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    display: block; /* For better touch targets on mobile */
+    padding: 0.5rem 0;
+}
+
+nav a:hover {
+    color: #0A8F00;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.125rem;
+    bottom: -0.3125rem;
+    left: 0;
+    background-color: #0A8F00;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.contact-button {
+    border: 0.125rem solid #000;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.3125rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block; /* For better mobile display */
+}
+
+.contact-button:hover {
+    background-color: #0A8F00;
+    border-color: #0A8F00;
+    color: white;
+    transform: translateY(-0.125rem);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    padding: 3.125rem;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.left-content {
+    width: 50%;
+    opacity: 0;
+    transform: translateX(-3.125rem);
+    animation: fadeInLeft 1s forwards;
+}
+
+.right-content {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.question-mark-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s 0.3s forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.hero-heading .highlight {
+    color: #0A8F00;
+    display: block;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.875rem;
+}
+
+.book-button {
+    border: 0.125rem solid #000;
+    padding: 0.75rem 1.875rem;
+    border-radius: 0.3125rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    display: inline-block;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #0A8F00;
+    border-color: #0A8F00;
+    color: white;
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(10, 143, 0, 0.2);
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: #0A7B46;
+    color: white;
+    padding: 1.25rem 1.875rem;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    max-width: 46.875rem;
+    margin: 2.5rem auto; /* Center horizontally */
+    box-shadow: 0 0.625rem 1.875rem rgba(10, 123, 70, 0.3);
+    opacity: 0;
+    transform: translateY(1.875rem);
+    animation: fadeInUp 1s 0.5s forwards;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0.625rem;
+    flex: 1 1 120px; /* Allow flexible width with minimum */
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+    opacity: 0;
+    animation: countUp 2s 1s forwards;
+}
+
+.stat-label {
+    font-size: 1rem;
+}
+
+.services-section {
+    padding: 5rem 3.125rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem; /* Ensure padding on small screens */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #333;
+    opacity: 0;
+    transform: translateY(1.875rem);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3.75rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(1.875rem);
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.service-card {
+    flex: 1 1 250px;
+    max-width: 280px;
+    padding: 1.875rem 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(2.5rem);
+    margin: 0 auto 1rem; /* Center cards on small screens */
+}
+
+.service-card:hover {
+    transform: scale(1.1);
+}
+
+.green-circle {
+    width: 5rem;
+    height: 5rem;
+    background-color: #0A7B46;
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.green-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    left: -100%;
+    top: 0;
+    transform: skewX(-15deg);
+    transition: all 0.5s ease;
+}
+
+.service-card:hover .green-circle::after {
+    left: 100%;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.9375rem;
+    font-weight: 600;
+}
+
+.service-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.event-coverages-section {
+    padding: 5rem 3.125rem;
+    background-color: white;
+}
+
+.services-label {
+    display: inline-block;
+    padding: 0.625rem 1.5625rem;
+    background-color: #0A7B46;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 1.5625rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(1.25rem);
+}
+.service-card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transform: scale(1);
+    z-index: 1;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: scale(1.3); /* 🚀 Big Zoom */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Deeper shadow for drama */
+    z-index: 2; /* Bring above others */
+}
+
+.coverages-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.coverage-card {
+    flex: 1 1 250px;
+    max-width: 280px;
+    min-height: 200px;
+    padding: 1.25rem;
+    background-color: #222;
+    border-radius: 0.9375rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(2.5rem);
+    margin: 0 auto 1rem; /* Center cards on small screens */
+}
+
+.coverage-card:hover {
+    transform: translateY(-0.3125rem) scale(1.02);
+    box-shadow: 0 0.9375rem 1.875rem rgba(0,0,0,0.2);
+    background-color: #1a1a1a;
+}
+
+.coverage-title {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.9375rem;
+}
+
+.coverage-preview {
+    width: 5rem;
+    height: 5rem;
+    background-color: #c2ffd3;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0.3125rem;
+    transition: all 0.3s ease;
+}
+
+.coverage-card:hover .coverage-preview {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0.3125rem 0.9375rem rgba(194, 255, 211, 0.3);
+}
+
+.view-more-btn {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    margin-top: auto;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    color: white;
+}
+
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: #0A7B46;
+    color: white;
+    border-radius: 50%;
+    margin-right: 0.625rem;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover .arrow-icon {
+    transform: translateX(0.3125rem);
+    background-color: #0ca355;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-3.125rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(3.125rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(1.875rem);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px; /* Slightly reduce base font size */
+    }
+    
+    .question-mark-image {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .question-mark-image {
+        max-width: 300px;
+    }
+    
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+    
+    header {
+        padding: 1rem;
+        flex-direction:row;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .left-content, .right-content {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .question-mark-image {
+        max-width: 250px;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+
+   
+    
+    .stat-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-heading {
+        font-size: 2.2rem;
+    }
+    
+    .services-section, .event-coverages-section {
+        padding: 3rem 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-left {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-nav {
+        justify-content: center;
+    }
+    .stats-section {
+        max-width: 95%;
+        margin: 2rem auto;
+        padding: 1rem 0.5rem;
+    }
+    
+    .stat-item {
+        flex: 1 1 80px;
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    
+    
+    html {
+        font-size: 12px;
+      
+    }
+    .logo-subtext{
+        font-size: 7.9px;
+        font-weight: 700;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav li {
+        margin: 0.5rem 0;
+    }
+    
+    .question-mark-image {
+        max-width: 200px;
+    }
+    
+    .hero-heading {
+        font-size: 2rem;
+    }
+    
+    .book-button {
+        width: 30%;
+        text-align: center;
+    }
+    
+    .service-card, .coverage-card {
+        max-width: 100%;
+    }
+    
+    .service-title, .coverage-title {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    .stats-section {
+       
+        /* Remove flex-direction: column */
+        align-items: center;
+        max-width: 100%;
+        padding: 0.75rem;
+        height: 90px;
+        gap: 0.5rem; /* Add some gap between items */
+    }
+    
+    .stat-item {
+        width: auto; /* Don't force 100% width */
+        margin-bottom: 0; /* Remove bottom margin */
+        padding: 0.3rem;
+        flex: 1; /* Make all items take equal space */
+    }
+    
+    .stat-number {
+        font-size: calc(1.5rem + 1vw); /* Smaller font for stats */
+        margin-bottom: 0.3rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem; /* Smaller font for labels */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .question-mark-image {
+        max-width: 180px;
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .contact-button {
+        display: block;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .coverage-preview {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media (max-width: 380px) {
+  
+   
+    .question-mark-image {
+        max-width: 150px;
+    }
+    
+    .stats-section {
+        padding: 0.5rem;
+        /* Keep horizontal layout */
+    }
+    
+    .stat-number {
+        font-size: calc(1.2rem + 1vw); /* Even smaller for tiny screens */
+    }
+    
+    .stat-label {
+        font-size: 0.7rem; /* Smaller labels for tiny screens */
+    }
+   
+}
+@media (max-width: 600px) {
+    .logo-subtext {
+        font-size: 6.4px;  /* Adjust to a larger size for mobile */
+        font-weight: 700;
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    padding: 0.5rem;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    max-width: 20rem;
+    height: 100vh;
+    background-color: #006837;
+    color: black;
+    z-index: 1001;
+    padding: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-close {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mobile-nav ul {
+    list-style: none;
+    margin-top: 3rem;
+}
+
+.mobile-nav li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: white;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 50px; /* Space for arrows */
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.coverages-grid {
+    display: flex;
+    gap: 20px; /* Consistent gap size */
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    flex-wrap: nowrap; /* Ensure no wrapping occurs */
+}
+
+.coverage-card {
+    flex: 0 0 auto;
+    width: calc(25% - 15px); /* 4 cards per row by default with gap consideration */
+    max-width: 250px;
+    background-color: #222;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 0;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+
+.coverage-title {
+    color: white;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.2rem;
+    width: 60%;
+}
+
+.coverage-preview {
+    width: 8rem;
+    height: 5rem;
+    background-color: transparent;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0.3125rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.preview-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    opacity: 1;
+    transition: none; 
+
+}
+
+.coverage-card:hover .preview-video {
+    opacity: 1;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.coverage-card:hover .play-icon {
+    opacity: 1;
+}
+
+.view-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0A7B46;
+    margin-top: 1rem;
+}
+
+.arrow-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0A7B46;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prev-arrow {
+    left: 5px;
+}
+
+.next-arrow {
+    right: 5px;
+}
+
+.carousel-arrow:hover {
+    background-color: #086036;
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: #444;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #0A7B46;
+}
+
+/* Video Modal Styles */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px; /* Narrower to accommodate vertical video */
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color:#0A7B46 ;
+}
+
+.modal-title {
+    color: white;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.close-modal {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.modal-video-container {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 16; /* Keeps vertical format */
+    margin: 0 auto;
+}
+
+
+.modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain', depending on your preference */
+    display: block;
+}
+
+
+
+/* Responsive adjustments */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 50px; /* Space for arrows */
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.coverages-grid {
+    display: flex;
+    gap: 20px; /* Consistent gap size */
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    flex-wrap: nowrap; /* Ensure no wrapping occurs */
+}
+
+.coverage-card {
+    flex: 0 0 auto;
+    width: calc(25% - 15px); /* 4 cards per row by default with gap consideration */
+    max-width: 250px;
+    background-color: #222;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 0;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .coverage-card {
+        width: calc(33.333% - 14px); /* 3 cards per row */
+    }
+    .coverage-preview {
+        height: 100px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 992px) {
+    .coverage-card {
+        width: calc(50% - 10px); /* 2 cards per row */
+    }
+   
+   
+    .coverage-preview {
+        height: 110px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coverage-card {
+        width: calc(100% - 20px); /* 1 card per row */
+    }
+    
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}
+.preview-video::-webkit-media-controls {
+    display: none !important;
+}
+
+.preview-video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.preview-video {
+    pointer-events: none; /* Prevent unwanted hover behavior */
+}
+.preview-video::-webkit-media-controls,
+.preview-video::-webkit-media-controls-panel,
+.preview-video::-webkit-media-controls-enclosure {
+    display: none !important;
+    opacity: 0 !important;
+}
+/* Logo fixes for small screens */
+
+/* Carousel responsive improvements */
+.carousel-container {
+    padding: 0 40px; /* Reduce padding on sides */
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        padding: 0 30px; /* Even smaller padding for mobile */
+    }
+    
+    .coverages-grid {
+        gap: 15px; /* Smaller gaps on mobile */
+    }
+    
+    .coverage-card {
+        padding: 1.2rem; /* Less padding inside cards */
+    }
+    
+    .coverage-title {
+        width: 55%; /* Slightly smaller title area */
+        font-size: 1rem; /* Smaller font */
+        margin-bottom: 1rem; /* Less bottom margin */
+    }
+   
+    .coverage-preview {
+        height: 110px;
+        width: 100px;
+    }
+}
+
+/* Video modal improvements */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+        max-width: 400px;
+    }
+    
+    .modal-video-container {
+        max-width: 250px; /* Smaller on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header {
+        padding: 0.75rem 1rem; /* Smaller header padding */
+    }
+    
+    .modal-title {
+        font-size: 1.1rem; /* Smaller title */
+    }
+    
+    .modal-video-container {
+        max-width: 400px; /* Even smaller on phones */
+    }
+}
+
+/* Hidden video controls fix - more specific selectors to ensure they work */
+.preview-video::-webkit-media-controls,
+.preview-video::-webkit-media-controls-panel,
+.preview-video::-webkit-media-controls-enclosure,
+.preview-video::-webkit-media-controls-overlay-play-button,
+.preview-video::-webkit-media-controls-play-button,
+.preview-video::-webkit-media-controls-timeline,
+.preview-video::-webkit-media-controls-current-time-display,
+.preview-video::-webkit-media-controls-time-remaining-display,
+.preview-video::-webkit-media-controls-volume-slider,
+.preview-video::-webkit-media-controls-mute-button,
+.preview-video::-webkit-media-controls-toggle-closed-captions-button,
+.preview-video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* For Firefox and other browsers */
+.preview-video {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Improved carousel navigation responsiveness */
+.carousel-arrow {
+    opacity: 0.9;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .prev-arrow {
+        left: 2px;
+    }
+    
+    .next-arrow {
+        right: 2px;
+    }
+    
+    .carousel-dots {
+        margin-top: 1.5rem;
+    }
+    
+    .carousel-dot {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+  
+}
+@media (max-width: 768px) {
+    .coverage-card {
+        margin: 10px auto;
+    }
+
+    .coverage-preview {
+        height: 110px;
+        width: 100px;
+    }
+}
+/* Base styles for elements before animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation triggered by JavaScript */
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Special styling for service cards */
+.service-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.service-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* For the service cards, we can add a slight scale effect */
+.service-card {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for the green circles */
+.service-icon .green-circle {
+    transition: transform 0.4s ease-out;
+}
+
+.service-card:hover .service-icon .green-circle {
+    transform: scale(1.1);
+}
+@media (min-width: 481px) and (max-width: 600px) {
+    .logo-subtext {
+       font-size: 7.8px;
+    }
+
+   
+}
+@media (max-width: 358px) and (min-width: 200px) {
+    /* Your styles here */
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    .logo-subtext {
+        font-size: 5.4px;  /* Adjust to a larger size for mobile */
+        font-weight: 700;
+    }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- HTML Structure Update -->
+<header id="top">
+    <div class="logo">
+        <div>
+            <span class="logo-text">PROMO<sub>Grp</sub></span>
+            <span class="logo-subtext">YOUR DIGITAL SUPPORTER</span>
+        </div>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#work">Previous work</a></li>
+        </ul>
+    </nav>
+    
+    <a href="contact.html" class="contact-button">Contact us</a>
+    <button class="mobile-menu-btn">☰</button>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-close">×</button>
+        <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About us</a></li> 
+            <li><a href="#services">Service</a></li>
+            <li><a href="#work">Previous work</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
+</header>
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="left-content">
+            <h1 class="hero-heading">
+                  Professionally Navigating 
+                 The <span class="highlight">Digital World</span>
+            </h1>
+            <p class="hero-desc">
+                We are a vibrant video production firm committed to assisting people in expanding their social media presence by producing cutting-edge videos.
+            </p>
+            <a href="contact.html" class="book-button">Book Now</a>
+            
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number">250</div>
+                    <div class="stat-label">Videos Created</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Brands Worked with</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Member Team</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-content">
+            <img src="p.jpg" alt="Question Mark Image" class="question-mark-image">
+        </div>
+        
+    </section>
+    
+    <!-- Removed the green curve background element -->
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">How We Enhance Your Content</h2>
+            <p class="section-description animate-on-scroll">
+                At Promo Group, our focus is on producing amazing content that narrates your distinct story.<br>
+                This is how we go about it:
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <div class="green-circle"></div>
+                    </div>
+                    <h3 class="service-title">Making</h3>
+                    <p class="service-description">
+                        Our gifted staff works their magic, making sure your brand shines in every snap.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <div class="green-circle"></div>
+                    </div>
+                    <h3 class="service-title">Making</h3>
+                    <p class="service-description">
+                        Our gifted staff works their magic, making sure your brand shines in every snap.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <div class="green-circle"></div>
+                    </div>
+                    <h3 class="service-title">Editing</h3>
+                    <p class="service-description">
+                        We meticulously polish your content in order to ensure that it flows naturally and engages the audience.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <div class="green-circle"></div>
+                    </div>
+                    <h3 class="service-title">Content Integrity</h3>
+                    <p class="service-description">
+                        Your Ideas, Your Exclusivity: We never use your creative concepts for other people, so your content is always unique and exceptional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Coverages Section -->
+
+<section id="work" class="event-coverages-section">
+    <div class="container">
+        <div class="services-label animate-on-scroll">services</div>
+        
+        <div class="carousel-container">
+            <button class="carousel-arrow prev-arrow" aria-label="Previous videos">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" fill="none" />
+                </svg>
+            </button>
+            
+            <div class="coverages-grid">
+                <!-- First Video Card -->
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_1">
+                    <h3 class="coverage-title">Wedding Film</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop>
+                            <source src="./video1.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+                
+                <!-- Second Video Card -->
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_2">
+                    <h3 class="coverage-title">Corporate Event</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail2.jpg">
+                            <source src="./video2.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+                
+                <!-- Third Video Card -->
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_3">
+                    <h3 class="coverage-title">Music Festival</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail3.jpg">
+                            <source src="./video3.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+                
+                <!-- Fourth Video Card -->
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_4">
+                    <h3 class="coverage-title">Product Launch</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail4.jpg">
+                            <source src="./video4.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+                
+                <!-- Additional cards not visible initially -->
+                
+
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_5">
+                    <h3 class="coverage-title">Fashion Show</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail5.jpg">
+                            <source src="./video5.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_6">
+                    <h3 class="coverage-title">Fashion Show</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail5.jpg">
+                            <source src="./video6.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+
+
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_7">
+                    <h3 class="coverage-title">Fashion Show</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail5.jpg">
+                            <source src="./video7.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+                
+                <div class="coverage-card animate-on-scroll" data-video-id="VIDEO_ID_8">
+                    <h3 class="coverage-title">Birthday Party</h3>
+                    <div class="coverage-preview">
+                        <video class="preview-video" muted loop poster="/path-to-thumbnail6.jpg">
+                            <source src="./video8.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M8 5v14l11-7z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="view-more-btn">
+                        <div class="arrow-icon">➔</div>
+                        <span>View More</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow next-arrow" aria-label="Next videos">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M9 6l6 6-6 6" stroke="#fff" stroke-width="2" fill="none" />
+                </svg>
+            </button>
+        </div>
+        
+        <div class="carousel-dots"></div>
+    </div>
+</section>
+
+<!-- Video Modal HTML -->
+<div class="video-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title">Video Title</h3>
+            <button class="close-modal">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" fill="none" />
+                </svg>
+            </button>
+        </div>
+        <div class="modal-video-container">
+            <div class="modal-video"></div>
+        </div>
+    </div>
+</div>    
+
+
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top">↑</a>
+
+    <!-- JavaScript for animations -->
+    <script>
+        // Show/hide back-to-top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.style.padding = '10px 50px';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 50px';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+            
+            // Animate elements when they come into view
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, targetValue) {
+            let current = 0;
+            const increment = targetValue / 100;
+            const timer = setInterval(function() {
+                current += increment;
+                element.textContent = Math.floor(current);
+                if (current >= targetValue) {
+                    element.textContent = targetValue;
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+
+        // Initialize counters when they come into view
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = document.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const targetValue = parseInt(stat.textContent);
+                        stat.textContent = '0';
+                        setTimeout(() => {
+                            animateCounter(stat, targetValue);
+                        }, 500);
+                    });
+                    observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-section'));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeBtn = document.querySelector('.mobile-nav-close');
+    const overlay = document.querySelector('.overlay');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+    
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements
+    const cardsContainer = document.querySelector('.coverages-grid');
+    const cards = document.querySelectorAll('.coverage-card');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    const modal = document.querySelector('.video-modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalVideo = document.querySelector('.modal-video');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Variables
+    let currentIndex = 0;
+    let cardsPerView = getCardsPerView();
+    const totalCards = cards.length;
+    
+    // Function to get cards per view based on screen size
+    function getCardsPerView() {
+        if (window.innerWidth < 768) return 1;
+        if (window.innerWidth < 992) return 2;
+        if (window.innerWidth < 1200) return 3;
+        return 4;
+    }
+    
+    // Calculate maximum index
+    function calculateMaxIndex() {
+        return Math.max(0, totalCards - cardsPerView);
+    }
+    
+    let maxIndex = calculateMaxIndex();
+    
+    // Clear and recreate dots
+    function createDots() {
+        dotsContainer.innerHTML = ''; // Clear existing dots
+        const totalPages = Math.ceil(totalCards / cardsPerView);
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.dataset.index = i;
+            dotsContainer.appendChild(dot);
+            
+            // Add event listener
+            dot.addEventListener('click', () => {
+                moveCarousel(i * cardsPerView);
+            });
+        }
+    }
+    
+    // Function to move carousel
+    function moveCarousel(index) {
+        // Clamp index between 0 and maxIndex
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        
+        // Get card width and gap
+        const cardWidth = cards[0].offsetWidth;
+        const cardGap = parseInt(getComputedStyle(cardsContainer).gap) || 20;
+        
+        // Calculate translation distance
+        const translateX = -currentIndex * (cardWidth + cardGap);
+        
+        // Apply translation with transform
+        cardsContainer.style.transform = `translateX(${translateX}px)`;
+        
+        // Update dots
+        const activeDotIndex = Math.floor(currentIndex / cardsPerView);
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === activeDotIndex);
+        });
+        
+        // Update arrow states
+        updateArrowStates();
+    }
+    
+    function updateArrowStates() {
+        prevArrow.disabled = currentIndex === 0;
+        prevArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextArrow.disabled = currentIndex >= maxIndex;
+        nextArrow.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+    }
+    
+    // Event listeners for arrows
+    prevArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            moveCarousel(currentIndex - 1);
+        }
+    });
+    
+    nextArrow.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            moveCarousel(currentIndex + 1);
+        }
+    });
+    
+    // Video preview on hover
+    cards.forEach(card => {
+        const previewVideo = card.querySelector('.preview-video');
+        const viewMoreBtn = card.querySelector('.view-more-btn');
+
+        // Set first frame as thumbnail by pausing at 0
+if (previewVideo) {
+    previewVideo.addEventListener('loadeddata', () => {
+        previewVideo.currentTime = 0;
+        previewVideo.pause();
+    });
+}
+
+        
+        // Preview on hover
+        card.addEventListener('mouseenter', () => {
+            if (previewVideo) {
+                if (previewVideo.readyState >= 3) {
+                    previewVideo.play().catch(err => console.log('Video play error:', err));
+                } else {
+                    previewVideo.addEventListener('canplay', function onCanPlay() {
+                        previewVideo.play().catch(err => console.log('Video play error:', err));
+                        previewVideo.removeEventListener('canplay', onCanPlay);
+                    });
+                }
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (previewVideo) {
+                previewVideo.pause();
+                previewVideo.currentTime = 0;
+            }
+        });
+        
+        // Open modal on click
+        if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the card click from opening modal
+        window.open('https://www.instagram.com/promo_grp?igsh=MTFmMmpkYWFyanp4Zw==', '_blank'); // Replace with your actual IG handle
+    });
+}
+
+        
+        card.addEventListener('click', () => {
+            openVideoModal(card);
+        });
+    });
+    
+    function openVideoModal(card) {
+    const videoId = card.dataset.videoId || 'VIDEO_ID_1'; // Fallback
+    const videoTitle = card.querySelector('.coverage-title')?.textContent || 'Video';
+    
+    modalTitle.textContent = videoTitle;
+    modalVideo.innerHTML = ''; // Clear previous content
+
+    const videoMap = {
+        VIDEO_ID_1: './video1.mp4',
+        VIDEO_ID_2:'./video2.mp4',
+        VIDEO_ID_3:'./video3.mp4',
+        VIDEO_ID_4:'./video4.mp4',
+        VIDEO_ID_5:'./video5.mp4',
+        VIDEO_ID_6:'./video6.mp4',
+        VIDEO_ID_7:'./video7.mp4',
+        VIDEO_ID_8:'./video8.mp4',
+        
+    };
+
+    const videoSrc = videoMap[videoId];
+    if (!videoSrc) {
+        console.error('No video source found for videoId:', videoId);
+        return;
+    }
+
+    const videoElement = document.createElement('video');
+    videoElement.controls = true;
+    videoElement.autoplay = true;
+    videoElement.className = 'modal-video';
+
+    const sourceElement = document.createElement('source');
+    sourceElement.src = videoSrc;
+    sourceElement.type = 'video/mp4';
+
+    videoElement.appendChild(sourceElement);
+    modalVideo.appendChild(videoElement);
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close modal functions
+    closeModal.addEventListener('click', closeVideoModal);
+    modalOverlay.addEventListener('click', closeVideoModal);
+    
+    function closeVideoModal() {
+    const video = modalVideo.querySelector('video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+        video.src = ''; // Clear src to release memory
+        video.load();   // Reset the video element
+    }
+
+    modalVideo.innerHTML = ''; // Remove video element entirely if needed
+
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+    
+    // Handle ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeVideoModal();
+        }
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const newCardsPerView = getCardsPerView();
+            
+            if (newCardsPerView !== cardsPerView) {
+                cardsPerView = newCardsPerView;
+                maxIndex = calculateMaxIndex();
+                
+                // Ensure current index is still valid
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                
+                // Recreate dots
+                createDots();
+                
+                // Reset carousel position
+                moveCarousel(currentIndex);
+            }
+        }, 250);
+    });
+    
+    // Initialize carousel
+    createDots();
+    updateArrowStates();
+});
+
+// This code will add animations to your services section when it comes into view
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Observer for the animate-on-scroll elements
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // When element becomes visible
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                // Once animation is triggered, no need to observe it anymore
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+
+    // Get all elements with the animate-on-scroll class
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    // Start observing each element
+    animateElements.forEach(element => {
+        animationObserver.observe(element);
+    });
+    
+    // Special staggered animation for service cards
+    const serviceCardsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Get all service cards within this services section
+                const cards = entry.target.querySelectorAll('.service-card');
+                
+                // Add staggered animation to each card
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animated');
+                    }, 150 * index); // 150ms delay between each card
+                });
+                
+                // Once animation is triggered, no need to observe it anymore
+                serviceCardsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    // Observe the services section for the staggered card animation
+    const servicesSection = document.querySelector('.services-section');
+    if (servicesSection) {
+        serviceCardsObserver.observe(servicesSection);
+    }
+});
+    </script>
+</body>
+</html>
