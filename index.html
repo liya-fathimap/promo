@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROMO - Your Digital Supporter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>PROMO - Your Digital Supporter</title>
     <style>
  /* Reset and Base Styles */
 * {
@@ -15,7 +15,9 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base font size for responsive scaling */
+    font-size: 16px;
+    width: 100%;
+    overflow-x: hidden;  /* Base font size for responsive scaling */
 }
 
 body {
@@ -50,7 +52,7 @@ header {
 .logo-text {
     font-size: 2.2rem;
     font-weight: 900;
-    color: #1d8b15; /* Dark Green */
+    color: #0A7B46; /* Dark Green */
     display: flex;
     align-items: baseline;
 }
@@ -208,6 +210,16 @@ nav a:hover::after {
     display: inline-block;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    /* Remove fixed width */
+    min-width: 120px; /* Add min-width instead */
+    text-align: center;
+}
+@media (max-width: 576px) {
+    .book-button {
+        padding: 0.5rem 1rem; /* Smaller padding on mobile */
+        width: auto; /* Let it size naturally */
+        font-size: 1rem; /* Slightly smaller font */
+    }
 }
 
 .book-button:hover {
