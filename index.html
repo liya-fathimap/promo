@@ -918,8 +918,9 @@ nav a:hover::after {
 }
 
 .coverage-preview {
-    width: 8rem;
-    height: 5rem;
+    width: 40%; /* Use percentage instead of fixed width */
+    height: 0;
+    padding-bottom: 25%; /* Create aspect ratio */
     background-color: transparent;
     position: absolute;
     right: 1.25rem;
@@ -928,7 +929,9 @@ nav a:hover::after {
     border-radius: 0.3125rem;
     transition: all 0.3s ease;
     overflow: hidden;
+    display: block; /* Ensure display */
 }
+
 
 .preview-video {
     position: absolute;
@@ -1081,17 +1084,17 @@ nav a:hover::after {
 
 .modal-video-container {
     width: 100%;
-    max-width: 300px;
-    aspect-ratio: 9 / 16; /* Keeps vertical format */
+    max-width: 280px; /* Slightly smaller */
+    max-height: 80vh; /* Prevent too tall videos */
     margin: 0 auto;
 }
 
 
 .modal-video {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* or 'contain', depending on your preference */
-    display: block;
+    height: auto; /* Let height adjust automatically */
+    max-height: 70vh; /* Prevent extreme heights */
+    object-fit: contain; /* Keep proper proportions */
 }
 
 
@@ -1131,7 +1134,22 @@ nav a:hover::after {
     transform: translateY(0);
     cursor: pointer;
 }
-
+@supports (-webkit-touch-callout: none) {
+    /* iOS-specific fixes */
+    .preview-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+    }
+    
+    .modal-video {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+    }
+}
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .coverage-card {
